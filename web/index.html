@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KeyFlow — визуальная автоматизация</title>
+<link rel="stylesheet" href="lib/litegraph.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header id="topbar">
+  <button id="btn-sidebar" class="btn mini" title="Панель workflow">☰</button>
+  <div class="brand">⚡ <b>Key</b>Flow</div>
+
+  <div class="wf-box">
+    <button id="btn-save" class="btn" data-i18n="save">Сохранить</button>
+  </div>
+
+  <div class="spacer"></div>
+
+  <div id="engine-state" class="engine-pill off" data-i18n="engine_off">ПРОЦЕСС ОСТАНОВЛЕН</div>
+  <button id="btn-run" class="btn run">▶ <span id="btn-run-label" data-i18n="run">Запустить</span></button>
+
+  <div class="spacer"></div>
+
+  <button id="btn-logs" class="btn" data-i18n="logs">Журнал</button>
+  <button id="btn-settings" class="btn" data-i18n="settings">Настройки</button>
+</header>
+
+<div id="workspace">
+  <aside id="sidebar">
+    <div class="side-head">
+      <span data-i18n="workflows">Workflows</span>
+      <span class="spacer"></span>
+      <button id="btn-wf-new" class="btn mini" title="Новый workflow">＋</button>
+      <button id="btn-wf-del" class="btn mini" title="Удалить workflow">🗑</button>
+    </div>
+    <div id="wf-list"></div>
+    <div class="side-foot">
+      <button id="btn-wf-export" class="btn mini wide" data-i18n="wf_export">⤓ Экспорт</button>
+      <button id="btn-wf-import" class="btn mini wide" data-i18n="wf_import">⤒ Импорт</button>
+      <input type="file" id="wf-file" accept=".json" class="hidden">
+      <span data-i18n="double_click_hint_short">Двойной клик — поиск нод</span>
+    </div>
+  </aside>
+
+  <main id="canvas-area">
+    <div id="breadcrumbs" class="hidden"></div>
+    <main id="canvas-wrap">
+      <canvas id="graphcanvas"></canvas>
+      <div id="hint" data-i18n="double_click_hint">Двойной клик по пустому месту — поиск нод</div>
+      <div id="minimap" class="hidden">
+        <canvas id="minimap-canvas" width="200" height="140"></canvas>
+      </div>
+      <div class="corner-tools">
+        <button id="btn-links" class="btn mini" title="Скрыть/показать линии">🔗</button>
+        <button id="btn-minimap" class="btn mini" title="Миникарта">🗺</button>
+      </div>
+    </main>
+  </main>
+</div>
+
+<section id="log-drawer" class="hidden">
+  <div class="log-head">
+    <b data-i18n="logs">Журнал</b>
+    <span class="spacer"></span>
+    <button id="btn-log-clear" class="btn mini">Очистить</button>
+    <button id="btn-log-close" class="btn mini">✕</button>
+  </div>
+  <div id="log-lines"></div>
+</section>
+
+<div id="dlg-settings" class="modal hidden">
+  <div class="modal-card big">
+    <div class="modal-head">
+      <b data-i18n="settings">Настройки</b>
+      <span class="spacer"></span>
+      <button class="btn mini" id="btn-set-close">✕</button>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-tab="general" data-i18n="tab_general">Общие</button>
+      <button class="tab" data-tab="plugins" data-i18n="tab_plugins">Плагины</button>
+    </div>
+    <div class="tab-body" id="tab-general">
+      <label class="row">Язык / Language
+        <select id="set-language">
+          <option value="ru">Русский (RU)</option>
+          <option value="en">English (EN)</option>
+        </select>
+      </label>
+      <label class="row"><span data-i18n="settings_theme">Тема</span>
+        <select id="set-theme">
+          <option value="dark" data-i18n="theme_dark">Тёмная</option>
+          <option value="light" data-i18n="theme_light">Светлая</option>
+        </select>
+      </label>
+      <label class="row"><span data-i18n="settings_links">Стиль линий</span>
+        <select id="set-links">
+          <option value="circuit" data-i18n="links_circuit">Плата (по сетке)</option>
+          <option value="spline" data-i18n="links_spline">Кривые (классика)</option>
+        </select>
+      </label>
+      <label class="row chk">
+        <input type="checkbox" id="set-snap">
+        <span data-i18n="snap">Выравнивать ноды по сетке</span>
+      </label>
+    </div>
+    <div class="tab-body hidden" id="tab-plugins">
+      <div class="plugins-toolbar">
+        <button id="btn-plug-import" class="btn" data-i18n="plugin_import">⤒ Импорт (.zip)</button>
+        <input type="file" id="plug-file" accept=".zip" class="hidden">
+      </div>
+      <div id="plugins-list"></div>
+    </div>
+  </div>
+</div>
+
+<div id="capture" class="modal hidden">
+  <div class="modal-card capture-card">
+    <div class="cap-title" data-i18n="capture_title">Зажмите сочетание клавиш…</div>
+    <div id="capture-combo" class="capture-combo">—</div>
+    <div class="hint" data-i18n="capture_hint">Отпустите клавиши, чтобы записать.</div>
+  </div>
+</div>
+
+<div id="toasts"></div>
+
+<script src="lib/litegraph.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/links.js"></script>
+<script src="js/connect.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

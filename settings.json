@@ -1,0 +1,9 @@
+{
+  "language": "ru",
+  "theme": "dark",
+  "link_style": "circuit",
+  "snap_grid": true,
+  "active_workflow": "pixiv",
+  "port": 8760,
+  "open_browser": true
+}

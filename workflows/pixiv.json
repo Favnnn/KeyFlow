@@ -1,0 +1,361 @@
+{
+ "name": "pixiv",
+ "graph": {
+  "last_node_id": 17,
+  "last_link_id": 37,
+  "nodes": [
+   {
+    "id": 5,
+    "type": "core/press_keys",
+    "pos": [
+     150,
+     150
+    ],
+    "size": {
+     "0": 340,
+     "1": 102
+    },
+    "flags": {},
+    "order": 4,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": 29,
+      "pos": [
+       10,
+       14
+      ],
+      "_kfMulti": [
+       10
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": [
+       8
+      ]
+     }
+    ],
+    "properties": {
+     "combo": "enter",
+     "mode": "tap"
+    },
+    "color": "#4a3b7a",
+    "bgcolor": "#2b2349",
+    "boxcolor": "#b39be8"
+   },
+   {
+    "id": 6,
+    "type": "core/press_keys",
+    "pos": [
+     150,
+     300
+    ],
+    "size": {
+     "0": 340,
+     "1": 102
+    },
+    "flags": {},
+    "order": 6,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": 7,
+      "pos": [
+       10,
+       14
+      ],
+      "_kfMulti": []
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": []
+     }
+    ],
+    "properties": {
+     "combo": "alt+tab",
+     "mode": "tap"
+    },
+    "color": "#4a3b7a",
+    "bgcolor": "#2b2349",
+    "boxcolor": "#b39be8"
+   },
+   {
+    "id": 7,
+    "type": "core/press_keys",
+    "pos": [
+     -210,
+     300
+    ],
+    "size": {
+     "0": 340,
+     "1": 102
+    },
+    "flags": {},
+    "order": 5,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": 8,
+      "pos": [
+       10,
+       14
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": [
+       7
+      ]
+     }
+    ],
+    "properties": {
+     "combo": "ctrl+s",
+     "mode": "tap"
+    },
+    "color": "#4a3b7a",
+    "bgcolor": "#2b2349",
+    "boxcolor": "#b39be8"
+   },
+   {
+    "id": 4,
+    "type": "core/press_keys",
+    "pos": [
+     -210,
+     150
+    ],
+    "size": {
+     "0": 340,
+     "1": 102
+    },
+    "flags": {},
+    "order": 3,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": 37,
+      "pos": [
+       10,
+       14
+      ],
+      "_kfMulti": [
+       14,
+       25,
+       31
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": [
+       29
+      ]
+     }
+    ],
+    "properties": {
+     "combo": "ctrl+v",
+     "mode": "tap"
+    },
+    "color": "#4a3b7a",
+    "bgcolor": "#2b2349",
+    "boxcolor": "#b39be8"
+   },
+   {
+    "id": 12,
+    "type": "core/press_keys",
+    "pos": [
+     -210,
+     0
+    ],
+    "size": {
+     "0": 340,
+     "1": 102
+    },
+    "flags": {},
+    "order": 2,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": 27,
+      "pos": [
+       10,
+       14
+      ]
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": [
+       37
+      ]
+     }
+    ],
+    "properties": {
+     "combo": "alt+tab",
+     "mode": "tap"
+    },
+    "color": "#4a3b7a",
+    "bgcolor": "#2b2349",
+    "boxcolor": "#b39be8"
+   },
+   {
+    "id": 17,
+    "type": "core/wait",
+    "pos": [
+     -210,
+     510
+    ],
+    "size": {
+     "0": 340,
+     "1": 54
+    },
+    "flags": {},
+    "order": 0,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": null,
+      "pos": [
+       10,
+       14
+      ]
+     },
+     {
+      "name": "seconds",
+      "type": "number",
+      "link": null,
+      "pos": [
+       10,
+       34
+      ],
+      "label": ""
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": []
+     }
+    ],
+    "properties": {
+     "seconds": 0.5
+    },
+    "color": "#3d5c85",
+    "bgcolor": "#26394f",
+    "boxcolor": "#8fc7ff"
+   },
+   {
+    "id": 1,
+    "type": "triggers/clipboard",
+    "pos": [
+     -600,
+     0
+    ],
+    "size": {
+     "0": 340,
+     "1": 80
+    },
+    "flags": {},
+    "order": 1,
+    "mode": 0,
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": [
+       27
+      ]
+     }
+    ],
+    "properties": {
+     "mode": "text",
+     "text_contains": "civitai"
+    },
+    "color": "#7a3b3b",
+    "bgcolor": "#452323",
+    "boxcolor": "#e0a080"
+   }
+  ],
+  "links": [
+   [
+    7,
+    7,
+    0,
+    6,
+    0,
+    "event"
+   ],
+   [
+    8,
+    5,
+    0,
+    7,
+    0,
+    "event"
+   ],
+   [
+    26,
+    1,
+    0,
+    10,
+    0,
+    "event"
+   ],
+   [
+    27,
+    1,
+    0,
+    12,
+    0,
+    "event"
+   ],
+   [
+    29,
+    4,
+    0,
+    5,
+    0,
+    "event"
+   ],
+   [
+    37,
+    12,
+    0,
+    4,
+    0,
+    "event"
+   ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+ },
+ "updated": "2026-10-04 13:33:27"
+}

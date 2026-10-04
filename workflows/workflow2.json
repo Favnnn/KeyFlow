@@ -1,0 +1,306 @@
+{
+ "name": "workflow2",
+ "graph": {
+  "last_node_id": 102,
+  "last_link_id": 170,
+  "nodes": [
+   {
+    "id": 18,
+    "type": "core/mouse_position",
+    "pos": [
+     -130,
+     -120
+    ],
+    "size": {
+     "0": 250,
+     "1": 46
+    },
+    "flags": {},
+    "order": 4,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": 150
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": [
+       163
+      ]
+     },
+     {
+      "name": "position",
+      "type": "pos",
+      "links": [
+       9
+      ]
+     }
+    ],
+    "properties": {},
+    "color": "#2b4a66",
+    "bgcolor": "#1d3346",
+    "boxcolor": "#7db6e0"
+   },
+   {
+    "id": 19,
+    "type": "core/preview",
+    "pos": [
+     180,
+     -130
+    ],
+    "size": {
+     "0": 168,
+     "1": 87
+    },
+    "flags": {},
+    "order": 5,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": 163,
+      "color_on": "#ffffff",
+      "_kfMulti": null
+     },
+     {
+      "name": "in1",
+      "type": "any",
+      "link": 9,
+      "color_on": "#7bd88f"
+     },
+     {
+      "name": "in2",
+      "type": "any",
+      "link": null,
+      "color_on": "#9a9a9a"
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": []
+     }
+    ],
+    "properties": {},
+    "color": "#5a5a5a",
+    "bgcolor": "#373737",
+    "boxcolor": "#bbbbbb"
+   },
+   {
+    "id": 17,
+    "type": "core/hotkey",
+    "pos": [
+     -470,
+     -120
+    ],
+    "size": {
+     "0": 250,
+     "1": 82
+    },
+    "flags": {},
+    "order": 0,
+    "mode": 0,
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": [
+       150,
+       169
+      ]
+     }
+    ],
+    "properties": {
+     "combo": "1+2+3"
+    },
+    "color": "#7a3b3b",
+    "bgcolor": "#452323",
+    "boxcolor": "#e0a080"
+   },
+   {
+    "id": 12,
+    "type": "core/move_mouse",
+    "pos": [
+     250,
+     90
+    ],
+    "size": {
+     "0": 250,
+     "1": 126
+    },
+    "flags": {},
+    "order": 1,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": null,
+      "pos": [
+       10,
+       14
+      ],
+      "_kfMulti": null
+     },
+     {
+      "name": "x",
+      "type": "number",
+      "link": null,
+      "pos": [
+       10,
+       58
+      ],
+      "label": ""
+     },
+     {
+      "name": "y",
+      "type": "number",
+      "link": null,
+      "pos": [
+       10,
+       82
+      ],
+      "label": ""
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": []
+     }
+    ],
+    "properties": {
+     "mode": "smooth",
+     "x": 1001,
+     "y": 1000,
+     "duration": 0.5
+    },
+    "color": "#2b4a66",
+    "bgcolor": "#1d3346",
+    "boxcolor": "#7db6e0"
+   },
+   {
+    "id": 91,
+    "type": "core/number",
+    "pos": [
+     -760,
+     60
+    ],
+    "size": {
+     "0": 340,
+     "1": 54
+    },
+    "flags": {},
+    "order": 2,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "value",
+      "type": "number",
+      "link": null,
+      "pos": [
+       10,
+       34
+      ],
+      "label": ""
+     }
+    ],
+    "outputs": [
+     {
+      "name": "int",
+      "type": "number",
+      "links": []
+     }
+    ],
+    "properties": {
+     "value": 12
+    },
+    "color": "#6b5a2a",
+    "bgcolor": "#42361a",
+    "boxcolor": "#e8c04a"
+   },
+   {
+    "id": 42,
+    "type": "core/preview",
+    "pos": [
+     250,
+     290
+    ],
+    "size": {
+     "0": 140,
+     "1": 46
+    },
+    "flags": {},
+    "order": 3,
+    "mode": 0,
+    "inputs": [
+     {
+      "name": "in",
+      "type": "event",
+      "link": null,
+      "color_on": "#ffffff",
+      "_kfMulti": [
+       157
+      ]
+     },
+     {
+      "name": "in1",
+      "type": "any",
+      "link": null,
+      "color_on": "#9a9a9a"
+     }
+    ],
+    "outputs": [
+     {
+      "name": "out",
+      "type": "event",
+      "links": []
+     }
+    ],
+    "properties": {},
+    "color": "#5a5a5a",
+    "bgcolor": "#373737",
+    "boxcolor": "#bbbbbb"
+   }
+  ],
+  "links": [
+   [
+    9,
+    18,
+    1,
+    19,
+    1,
+    "any"
+   ],
+   [
+    150,
+    17,
+    0,
+    18,
+    0,
+    "event"
+   ],
+   [
+    163,
+    18,
+    0,
+    19,
+    0,
+    "event"
+   ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+ },
+ "updated": "2026-10-01 21:40:57"
+}
